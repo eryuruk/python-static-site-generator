@@ -1,6 +1,4 @@
 from pathlib import Path
-import typer
-from ssg.site import Site
 
 class Site:
     
@@ -18,9 +16,3 @@ class Site:
             if path.is_dir():
                 self.create.dir(path)
         
-def main(source="content", dest="dist"):
-    config = {"source": source, "dest": dest  }
-    isite = Site(**config) 
-    isite.build()      
-
-typer.run(main)
